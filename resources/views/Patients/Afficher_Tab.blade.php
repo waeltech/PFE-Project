@@ -5,17 +5,17 @@
             <th>ID</th>
             <th>NAME</th>
             <th>EMAIL</th>
-            <th>PASSWORD</th>
+            <th>PRENOM</th>
             <th>Afficher Plus</th>
         </tr>
         
         @foreach ($patients as $patient)
         <tr>
-            <td>{{$patient->id}}</td>
-            <td>{{$patient->name}}</td>
-            <td>{{$patient->email}}</td>
-            <td>{{$patient->password}}</td>
-            <td><a class="btn btn-primary" href="{{ route('patients.Afficher',$patient->id) }}" role="button">Afficher Plus</a></td>
+            <td>{{$patient->NumDoss}}</td>
+            <td>{{$patient->NomPat}}</td>
+            <td>{{$patient->Email}}</td>
+            <td>{{$patient->PrenomPat}}</td>
+            <td><a class="btn btn-primary" href="{{ route('patients.Afficher',$patient->NumDoss) }}" role="button">Afficher Plus</a></td>
         </tr>
         
         @endforeach        

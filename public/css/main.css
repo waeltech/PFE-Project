@@ -79,11 +79,7 @@ table {
     background-color:rgb(135, 203, 185);
   }
   
-  form {
-    display: flex;
-     justify-content: center;
-
-  }
+  
   
 
 
@@ -146,10 +142,5 @@ footer ul {
     footer ul {
         text-align: left;
     }
-
-
-.action-btn {
-        width: 250px;
-        height: 250px;
-}
-    
+}    
+*************************************

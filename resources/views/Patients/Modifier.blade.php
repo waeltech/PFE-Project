@@ -10,21 +10,21 @@
             </ul>
         </x-alert>
     @endif
-    <form method="POST" action="{{ route('patients.update',$patient->id) }}">
+    <form method="POST" action="{{ route('patients.update',$patient->NumDoss) }}">
         @csrf
         @method('PUT')
         <div class="mb-3">
             <label class="form-label">Prenom</label>
-            <input type="text" name="prenom" class="form-control" value="{{ old('prenom',$patient->prenom) }}">
-            @error('prenom')
+            <input type="text" name="PrenomPat" class="form-control" value="{{ old('PrenomPat',$patient->PrenomPat) }}">
+            @error('PrenomPat')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
 
         <div class="mb-3">
             <label class="form-label">nom</label>
-            <input type="text" name="nom" class="form-control" value="{{ old('prenom',$patient->nom) }}">
-            @error('nom')
+            <input type="text" name="NomPat" class="form-control" value="{{ old('NomPat',$patient->NomPat) }}">
+            @error('NomPat')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
@@ -32,11 +32,11 @@
 
         <div class="mb-3">
             <label class="form-label">Sexe :</label>
-            <select id="sexe" name="sexe" class="form-control">
-                <option value="M" {{ old('sexe', $patient->sexe) == 'M' ? 'selected' : '' }}>M</option>
-                <option value="F" {{ old('sexe', $patient->sexe) == 'F' ? 'selected' : '' }}>F</option>
+            <select id="sexe" name="Sexe" class="form-control">
+                <option value="M" {{ old('Sexe', $patient->Sexe) == 'M' ? 'selected' : '' }}>M</option>
+                <option value="F" {{ old('Sexe', $patient->Sexe) == 'F' ? 'selected' : '' }}>F</option>
             </select><br>
-            @error('sexe')
+            @error('Sexe')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
@@ -44,64 +44,64 @@
 
         <div class="mb-3">
             <label class="form-label">Né le :</label>
-            <input type="date" class="form-control" name="dateNaiss" id="dateNaiss" value="{{ old('dateNaiss', $patient->dateNaiss) }}"><br>
-            @error('dateNaiss')
+            <input type="date" class="form-control" name="DateNaiss" id="dateNaiss" value="{{ old('DateNaiss', $patient->DateNaiss) }}"><br>
+            @error('DateNaiss')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         
         <div class="mb-3">
             <label class="form-label">à :</label>
-            <input type="text" class="form-control" name="lieuNaiss" value="{{ old('lieuNaiss', $patient->lieuNaiss) }}"><br>
-            @error('lieuNaiss')
+            <input type="text" class="form-control" name="LieuNaiss" value="{{ old('LieuNaiss', $patient->LieuNaiss) }}"><br>
+            @error('LieuNaiss')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         
         <div class="mb-3">
             <label class="form-label">Age:</label>
-            <input type="text" class="form-control" name="age" id="age" value="{{ old('age', $patient->age) }}"><br>
+            <input type="text" class="form-control" name="Age" id="age" value="{{ old('Age', $patient->Age) }}"><br>
         </div>
         
         <div class="mb-3">
             <label class="form-label">Etat Civil :</label>
-            <input type="text" class="form-control" name="etatcivil" value="{{ old('etatcivil', $patient->etatcivil) }}"><br>
+            <input type="text" class="form-control" name="Etat_civil" value="{{ old('Etat_civil', $patient->Etat_civil) }}"><br>
         </div>
         
         <div class="mb-3">
             <label class="form-label">Addresse :</label>
-            <input type="text" class="form-control" name="addresse" value="{{ old('addresse', $patient->addresse) }}"><br>
+            <input type="text" class="form-control" name="Addresse" value="{{ old('Addresse', $patient->Addresse) }}"><br>
         </div>
         
         <div class="mb-3">
             <label class="form-label">Mutuelle :</label>
-            <select class="form-control" name="mutuelle">
-                <option value="YES" {{ old('mutuelle', $patient->mutuelle) == 'YES' ? 'selected' : '' }}>YES</option>
-                <option value="NO" {{ old('mutuelle', $patient->mutuelle) == 'NO' ? 'selected' : '' }}>NO</option>
+            <select class="form-control" name="Mutuelle">
+                <option value="YES" {{ old('Mutuelle', $patient->Mutuelle) == 'YES' ? 'selected' : '' }}>YES</option>
+                <option value="NO" {{ old('Mutuelle', $patient->Mutuelle) == 'NO' ? 'selected' : '' }}>NO</option>
             </select><br>
-            @error('mutuelle')
+            @error('Mutuelle')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         
         <div class="mb-3">
             <label class="form-label">Profession:</label>
-            <input type="text" class="form-control" name="profession" value="{{ old('profession', $patient->profession) }}"><br>
+            <input type="text" class="form-control" name="Profession" value="{{ old('Profession', $patient->Profession) }}"><br>
         </div>
         
         <div class="mb-3">
             <label class="form-label">Email:</label>
-            <input type="email" class="form-control" name="email" value="{{ old('email', $patient->email) }}"><br>
+            <input type="email" class="form-control" name="Email" value="{{ old('Email', $patient->Email) }}"><br>
         </div>
         
         <div class="mb-3">
             <label class="form-label">Tel:</label>
-            <input type="tel" class="form-control" name="tel" value="{{ old('tel', $patient->tel) }}"><br>
+            <input type="tel" class="form-control" name="Tel" value="{{ old('tel', $patient->tel) }}"><br>
         </div>
         
         <div class="mb-3">
             <label class="form-label">Observations :</label>
-            <textarea name="observations" class="form-control">{{ old('observations', $patient->observations) }}</textarea>
+            <textarea name="Observations" class="form-control">{{ old('Observations', $patient->Observations) }}</textarea>
         </div>
     
         <div class="my-4">

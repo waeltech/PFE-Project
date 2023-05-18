@@ -11,18 +11,22 @@ class Patients extends Model
 
     use HasFactory;
     protected $fillable = [
-        'prenom',
-        'nom',
-        'sexe',
-        'dateNaiss',
-        'lieuNaiss',
-        'age',
-        'etatcivil',
-        'addresse',
-        'mutuelle',
-        'profession',
-        'email',
-        'tel',
-        'observations', 
+        'NumDoss',
+        'PrenomPat',
+        'NomPat',
+        'Sexe',
+        'DateNaiss',
+        'LieuNaiss',
+        'Age',
+        'Etat_civil',
+        'Addresse',
+        'Mutuelle',
+        'Profession',
+        'Email',
+        'Tel',
+        'Observations', 
     ];
+
+    protected $primaryKey = 'NumDoss';
+
 }

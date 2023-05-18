@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfosController;
 use App\Http\Controllers\PatientController;
@@ -59,3 +60,9 @@ Route::post('/patients/store',[PatientController::class,'store'])->name('patient
 // *****************************************************************************
 
 Route::get('/settings',[SettingsController::class,'settings'])->name('settingspage');
+
+
+
+// **********************    Dashboard Routes   ********************************
+
+Route::get('/dash',[DashboardController::class,'dashboard'])->name('dashboardpage');

@@ -18,19 +18,19 @@ class PatientsFactory extends Factory
     {
         return [
             
-            'prenom' => $this->faker->firstName(),
-            'nom' => $this->faker->lastName(),
-            'sexe' => $this->faker->randomElement(['Homme', 'Femme']),
-            'dateNaiss' => $this->faker->date(),
-            'lieuNaiss' => $this->faker->city(),
-            'age' => $this->faker->numberBetween(18, 90),
-            'etatcivil' => $this->faker->randomElement(['Marié', 'Célibataire']),
-            'addresse' => $this->faker->address(),
-            'mutuelle' => $this->faker->word(),
-            'profession' => $this->faker->jobTitle(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'tel' => $this->faker->phoneNumber(),
-            'observations' => $this->faker->paragraph(),
+            'PrenomPat' => $this->faker->firstName(),
+            'NomPat' => $this->faker->lastName(),
+            'Sexe' => $this->faker->randomElement(['Homme', 'Femme']),
+            'DateNaiss' => $this->faker->date(),
+            'LieuNaiss' => $this->faker->city(),
+            'Age' => $this->faker->numberBetween(18, 90),
+            'Etat_civil' => $this->faker->randomElement(['Marié', 'Célibataire']),
+            'AddressePat' => $this->faker->address(),
+            'Mutuelle' => $this->faker->word(),
+            'Profession' => $this->faker->jobTitle(),
+            'Email' => $this->faker->unique()->safeEmail(),
+            'Tel' => $this->faker->phoneNumber(),
+            'Observations' => $this->faker->paragraph(),
         ];
     }
 }
