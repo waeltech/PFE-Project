@@ -3,8 +3,10 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfosController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\TraitementController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/',[HomeController::class,'home'])->name('homepage');
+Route::get('/',[PatientController::class,'home'])->name('homepage');
 
 
 Route::get('/hello',[HomeController::class,'hello']);
@@ -33,7 +35,6 @@ Route::get('/hello',[HomeController::class,'hello']);
 // });
 
 
-Route::get('/article',[HomeController::class,'article'])->name('articlepage');
 
 
 // *****************************************************************************
@@ -56,6 +57,19 @@ Route::get('/patients/Ajouter',[PatientController::class,'Ajouter'])->name('pati
 Route::post('/patients/store',[PatientController::class,'store'])->name('patients.store');
 
 
+// Route::resource('patients',PatientController::class);
+
+
+
+// ============== LOGIN ROUTE ================== ***
+
+Route::get('/login',[LoginController::class,'loginaffich'])->name('login.affich')->middleware('guest');
+Route::post('/login',[LoginController::class,'login'])->name('login')->middleware('guest');
+Route::get('/logout',[LoginController::class,'logout'])->name('login.logout')->middleware('auth');
+
+
+
+
 
 // *****************************************************************************
 
@@ -66,3 +80,8 @@ Route::get('/settings',[SettingsController::class,'settings'])->name('settingspa
 // **********************    Dashboard Routes   ********************************
 
 Route::get('/dash',[DashboardController::class,'dashboard'])->name('dashboardpage');
+
+
+// *****************************************************
+
+Route::get('/traitement',[TraitementController::class,'Traitindex'])->name('traitementpage');

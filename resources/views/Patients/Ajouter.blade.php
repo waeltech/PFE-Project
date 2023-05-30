@@ -1,4 +1,4 @@
-<x-master title="les patients">
+<x-masterDash title="les patients">
 
     @if ($errors->any())
         <x-alert type="danger">
@@ -122,4 +122,4 @@
     </form>
 
 <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
-</x-master>
+</x-masterDash>

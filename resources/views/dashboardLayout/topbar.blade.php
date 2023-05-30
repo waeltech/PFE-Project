@@ -1,3 +1,4 @@
+
 <div class="topbar">
     <div class="toggle">
         <ion-icon name="menu-outline"></ion-icon> 
@@ -9,6 +10,6 @@
         </label>    
     </div>
     <div class="user">
-        <img src="assets/imgs/customer01.jpg" >
+        <img src="{{ asset('images/customer01.jpg') }}" >
     </div>
 </div>

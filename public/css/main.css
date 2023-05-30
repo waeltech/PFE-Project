@@ -11,8 +11,29 @@
     --bg-300:#FFFFFF;
 }
 
+.navbar-light .navbar-nav .nav-link{
+  color: black;
+  font-size: 22px;
+}
+.navbar-light .navbar-brand{
+  color: black;
+  font-size: 30px;
+}
+header{
+  height: 100vh;
+  min-height: 400px;
+  background-size: cover;
+  background-image: url("https://img.freepik.com/free-vector/vector-cabinet-dentist-cartoon-interior-with-comfortable-chair_1441-2901.jpg?w=1380&t=st=1684386387~exp=1684386987~hmac=22243072270ea170196223724817faea7f47550cb73e7fd67f0d0fa385d78b83");
+}
+/*media Query*/
+@media only screen and (max-width:600px){
+  header{
+      background-position: 20% 33%;
+  }
+}
+
 body {
-    background: var(--accent-200);
+    /* background: var(--accent-200); */
 }
 
 .form-control:focus {
@@ -143,4 +164,4 @@ footer ul {
         text-align: left;
     }
 }    
-*************************************
+

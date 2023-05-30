@@ -1,4 +1,4 @@
-<x-master title="les patients">
+<x-masterDash title="les patients">
     <h3> Modifier Un Patient :</h3>
 
     @if ($errors->any())
@@ -109,4 +109,4 @@
             <a href="{{ route('patientspage') }}" class="btn btn-default">Back</a>
         </div>
     </form>
-</x-master>
+</x-masterDash>
