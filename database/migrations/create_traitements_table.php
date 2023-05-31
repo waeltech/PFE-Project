@@ -10,11 +10,12 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::table('traitement', function (Blueprint $table) {
+        Schema::create('traitements', function (Blueprint $table) {
             $table->bigIncrements('Num_Traitement');
             $table->date('DateTraitement');
             $table->enum('Acte', ['Traitement endodontique', 'Obturation composite', 'Détartrage', 'Surfaçage', 'Extraction', 'Extraction chirurgicale', 'Couronne ccm', 'Couronne zircone', 'Couronne ccc', 'Implant', 'Prothèse adjointe totale', 'Stellite', 'Prothèse adjointe partielle', 'Valplast', 'Inlaycore', 'Blanchiment', 'Orthodontie']);
             $table->unsignedInteger('Dent');
+            $table->unsignedBigInteger('NumDoss');
             $table->timestamps();
         });
     }
@@ -22,10 +23,8 @@ return new class extends Migration {
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
-        Schema::table('traitement', function (Blueprint $table) {
-            Schema::dropIfExists('traitement');
-        });
+        Schema::dropIfExists('traitements');
     }
 };

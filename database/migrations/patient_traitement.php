@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreign('NumDoss')->references('NumDoss')->on('patients')->onDelete('cascade');
         }
 
-        $table->foreign('Num_Traitement')->references('Num_Traitement')->on('traitement')->onDelete('cascade');
+        $table->foreign('Num_Traitement')->references('Num_Traitement')->on('traitements')->onDelete('cascade');
     });
 }
 

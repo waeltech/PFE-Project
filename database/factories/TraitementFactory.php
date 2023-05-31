@@ -48,16 +48,16 @@ class TraitementFactory extends Factory
         // $patient = Patients::factory()->create();
         // dump($patient);
 
-        // $patients= Patients::pluck('NumDoss')->toArray();
+        $patients= Patients::pluck('NumDoss')->toArray();
 
-        $patient = Patients::factory()->create();
+        // $patient = Patients::factory()->create();
 
 
         return [
             'DateTraitement' => $this->faker->date(),
             'Acte' => $this->faker->randomElement($actes),
             'Dent' => $this->faker->numberBetween(1, 32),
-            'NumDoss'=> $patient->,
+            'NumDoss'=> $this->faker->randomElement($patients),
         ];
     }
 }

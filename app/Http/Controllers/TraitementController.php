@@ -14,6 +14,9 @@ class TraitementController extends Controller
         $traitements = Traitement::paginate(10);
         $patients = Patients::paginate(10);
 
-        return view('traitement', compact('traitements', 'patients'));
+        return view('dashboardpages.Traitements', compact('traitements', 'patients'));
     }
+
+
+
 }

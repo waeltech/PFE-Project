@@ -10,8 +10,13 @@ class Traitement extends Model
 {
     use HasFactory;
 
-    public function patients(): BelongsToMany
+    // public function patients(): BelongsToMany
+    // {
+    //     return $this->belongsToMany(Patients::class);
+    // }
+
+    public function patients()
     {
-        return $this->belongsToMany(Patients::class);
+        return $this->belongsToMany(Patients::class, 'patient_traitement', 'Num_Traitement', 'NumDoss');
     }
 }

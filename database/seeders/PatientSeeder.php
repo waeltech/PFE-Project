@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Patients;
+use App\Models\Traitement;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,15 +17,10 @@ class PatientSeeder extends Seeder
      */
     public function run(): void
     {
-        Patients::factory(20)->create();
-
-
-        // DB::table('patients')->insert([
-
-        //     'prenom' => Str::random(10),
-        //     'nom' => Str::random(10),
-        //     'email' => Str::random(10).'@gmail.com',
-        //     'password' => Hash::make('password'),
-        // ]);
-    }
+        // Patients::factory(20)->create();
+        Patients::factory(50)->create()->each(function ($patient) {
+            $traitements = Traitement::inRandomOrder()->take(rand(1, 3))->pluck('Num_Traitement');
+            $patient->traitements()->attach($traitements);
+    });
+  }
 }

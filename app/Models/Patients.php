@@ -30,9 +30,16 @@ class Patients extends Model
 
     protected $primaryKey = 'NumDoss';
 
-    public function traitements(): BelongsToMany
+    // public function traitements(): BelongsToMany
+    // {
+    //     return $this->belongsToMany(Traitement::class);
+    // }
+
+    public function traitements()
     {
-        return $this->belongsToMany(Traitement::class);
+        return $this->belongsToMany(Traitement::class, 'patient_traitement', 'NumDoss', 'Num_Traitement');
     }
+    
+
 
 }
