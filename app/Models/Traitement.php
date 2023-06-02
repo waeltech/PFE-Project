@@ -10,10 +10,10 @@ class Traitement extends Model
 {
     use HasFactory;
 
-    // public function patients(): BelongsToMany
-    // {
-    //     return $this->belongsToMany(Patients::class);
-    // }
+    protected $primaryKey = 'Num_Traitement';
+
+
+    
 
     public function patients()
     {
