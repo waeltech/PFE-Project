@@ -5,7 +5,7 @@
 
     <table class="table table-bordered ">
         <tr>
-            <th>ID</th>
+            <th>NumDoss</th>
             <th>Nom</th>
             <th>Prenom</th>
             <th>Email</th>

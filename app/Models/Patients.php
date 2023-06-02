@@ -11,6 +11,9 @@ class Patients extends Model
     
 
     use HasFactory;
+
+    protected $primaryKey = 'NumDoss';
+
     protected $fillable = [
         'NumDoss',
         'PrenomPat',
@@ -20,7 +23,7 @@ class Patients extends Model
         'LieuNaiss',
         'Age',
         'Etat_civil',
-        'Addresse',
+        'AddressePat',
         'Mutuelle',
         'Profession',
         'Email',
@@ -28,7 +31,6 @@ class Patients extends Model
         'Observations', 
     ];
 
-    protected $primaryKey = 'NumDoss';
 
     // public function traitements(): BelongsToMany
     // {

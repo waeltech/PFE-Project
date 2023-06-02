@@ -73,7 +73,7 @@
 
                 <div>
                     <label class="form-label">Addresse :</label>
-                    <input type="text" class="form-control" name="Addresse"><br>
+                    <input type="text" class="form-control" name="AddressePat"><br>
                 </div>
 
 
@@ -115,7 +115,7 @@
 
             <div class="my-4">
                 <button type="submit" class="btn  profile-button">Ajouter</button>
-                <a href="{{ route('patientspage') }}" class="btn btn-default">Back</a>
+                <a href="{{ route('patientspage') }}" class="btn btn-default">Retour</a>
             </div>
         </div>
 

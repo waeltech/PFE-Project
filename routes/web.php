@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TraitementController;
+use App\Models\Traitement;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,6 +62,22 @@ Route::post('/patients/store',[PatientController::class,'store'])->name('patient
 
 
 
+// ****************** Traitement Route ****************************
+
+Route::get('/traitement',[TraitementController::class,'Traitindex'])->name('traitementpage');
+Route::get('/traitements/Ajouter',[TraitementController::class,'Ajouter'])->name('traitements.Ajouter');
+Route::post('/traitements/store',[TraitementController::class,'store'])->name('traitements.store');
+
+Route::get('/traitements/{traitement}/modifier',[TraitementController::class,'modifier'])
+->name('traitements.modifier');
+
+Route::put('/traitements/{traitements}',[TraitementController::class,'update'])
+->name('traitements.update');
+
+
+
+
+
 // ============== LOGIN ROUTE ================== ***
 
 Route::get('/login',[LoginController::class,'loginaffich'])->name('login.affich')->middleware('guest');
@@ -84,4 +101,3 @@ Route::get('/dash',[DashboardController::class,'dashboard'])->name('dashboardpag
 
 // *****************************************************
 
-Route::get('/traitement',[TraitementController::class,'Traitindex'])->name('traitementpage');

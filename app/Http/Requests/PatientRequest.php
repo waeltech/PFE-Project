@@ -22,19 +22,20 @@ class PatientRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'prenom' => 'required|string|max:255',
-            'nom' => 'required|string|max:255',
-            'sexe' => 'required|string|max:255',
-            'dateNaiss' => 'required|date',
-            'lieuNaiss' => 'required|string|max:255',
-            'age' => 'required|integer',
-            'etatcivil' => 'required|string|max:255',
-            'addresse' => 'required|string|max:255',
-            'mutuelle' => 'required|string|max:255',
-            'profession' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:patients',
-            'tel' => 'required|string|max:255',
-            'observations' => 'required|string|max:255',
+            'PrenomPat' => 'required|string|max:255',
+            'NomPat' => 'required|string|max:255',
+            'Sexe' => 'required|string|max:255',
+            'DateNaiss' => 'required|date',
+            'LieuNaiss' => 'required|string|max:255',
+            'Age' => 'required|integer',
+            'Etat_civil' => 'required|string|max:255',
+            'AddressePat' => 'required|string|max:255',
+            'Mutuelle' => 'required|string|max:255',
+            'Profession' => 'required|string|max:255',
+            'Email' => 'required|string|email|max:255|unique:patients,email',
+            'Tel' => 'required|string|max:255',
+            'Observations' => 'required|string|max:255',
         ];
+        
     }
 }

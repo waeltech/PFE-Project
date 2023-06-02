@@ -24,7 +24,7 @@
 
 </head>
 
-<body data-bs-theme="dark">
+<body>
     <!-- ========= Navigation Menu ============ -->
 
     @include('dashboardLayout.navdash')
