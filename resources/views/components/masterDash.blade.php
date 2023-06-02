@@ -14,9 +14,9 @@
 
     <!-- ========== Styles =========== -->
 
-    <link rel="stylesheet" href="/css/dash.css">
+    <link rel="stylesheet" href="{{ asset('css/dash.css') }}">
 
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
     <link rel="shortcut icon" href="{{ asset('images/favicon.svg') }}" type="image/svg+xml">
 
@@ -24,7 +24,7 @@
 
 </head>
 
-<body>
+<body data-bs-theme="dark">
     <!-- ========= Navigation Menu ============ -->
 
     @include('dashboardLayout.navdash')
@@ -44,11 +44,16 @@
 
 
 
-
+  
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/dash.js"></script>
+
+    
+
+    <script src="{{ asset('js/dash.js') }}"></script>
+    <script src="{{ asset('js/dark-mode.js') }}"></script>
+
 
     <!-- ============= Ionic Icon ============= -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

@@ -73,6 +73,17 @@
                 </a> 
             </li>
 
+
+            <li>
+                <a href="">
+                    {{-- <div class="form-check form-switch">
+                        <input type="checkbox" class="form-check-input" id="checkbox">
+                        <label class="form-check-label" for="checkbox" >
+                            Dark Mode
+                        </label>
+                    </div> --}}
+                </a>
+            </li>
             
               
         </ul>
