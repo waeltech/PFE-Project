@@ -10,10 +10,9 @@
             </ul>
         </x-alert>
     @endif
-    <form method="POST" action="{{ route('traitements.update',$patient->NumDoss) }}">
+    <form method="POST" action="{{ route('traitements.update',$traitement->Num_Traitement) }}">
         @csrf
         @method('PUT')
-        <div class="row">
         <div class="mb-3">
             <label class="form-label">Numéro de dossier</label>
             <input type="number" name="NumDoss" class="form-control" value="{{ old('NumDoss',$patient->NumDoss) }}">
@@ -25,7 +24,7 @@
 
         <div class="mb-3">
             <label class="form-label">Date de traitement</label>
-            <input type="date" name="DateTraitement" class="form-control" value="{{ old('DateTraitement',$traitements->DateTraitement) }}">
+            <input type="date" name="DateTraitement" class="form-control" value="{{ old('DateTraitement',$traitement->DateTraitement) }}">
             @error('DateTraitement')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
@@ -59,7 +58,7 @@
               
         <div class="mb-3">
             <label class="form-label">Dent</label>
-            <input type="number" name="Dent" class="form-control" value="{{ old('Dent',$traitements->Dent) }}">
+            <input type="number" name="Dent" class="form-control" value="{{ old('Dent',$traitement->Dent) }}">
             @error('Dent')
                 <div class="text-danger">{{ $message }}</div>
             @enderror    

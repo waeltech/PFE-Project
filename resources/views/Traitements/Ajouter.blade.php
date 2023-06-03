@@ -1,5 +1,6 @@
 <x-masterDash title="Ajouter un traitement">
     <h1>Ajouter un traitement</h1>
+    
     <form method="POST" action="{{ route('traitements.store') }}">
         @csrf
 

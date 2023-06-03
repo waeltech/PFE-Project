@@ -1,16 +1,17 @@
-
 <div class="topbar">
     <div class="toggle">
-        <ion-icon name="menu-outline"></ion-icon> 
+        <ion-icon name="menu-outline"></ion-icon>
     </div>
     <div class="search">
-        <label >
-            <input type="text" placeholder="Search here">
+        <label>
+            <input type="text" placeholder="Search here" />
             <ion-icon name="search-outline"></ion-icon>
-        </label>    
-    </div>  
-
+        </label>
+    </div>
+    <div class="dark">
+        <img src="{{ asset('images/moon.png') }}" class="dark-toggle" />
+    </div>
     <div class="user">
-        <img src="{{ asset('images/customer01.jpg') }}" >
+        <img src="{{ asset('images/customer01.jpg') }}" />
     </div>
 </div>

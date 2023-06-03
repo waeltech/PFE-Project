@@ -16,7 +16,7 @@ class TraitementSeeder extends Seeder
     {
       
         // Traitement::factory(5)->create();
-        Traitement::factory(5)->create()->each(function ($traitement) {
+        Traitement::factory(20)->create()->each(function ($traitement) {
             $patients = Patients::inRandomOrder()->take(rand(1, 5))->pluck('NumDoss');
             $traitement->patients()->attach($patients);
         });

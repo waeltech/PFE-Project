@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfosController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PaiementController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TraitementController;
@@ -101,3 +102,4 @@ Route::get('/dash',[DashboardController::class,'dashboard'])->name('dashboardpag
 
 // *****************************************************
 
+Route::get('/Paiement',[PaiementController::class,'index'])->name('Paiementpage');

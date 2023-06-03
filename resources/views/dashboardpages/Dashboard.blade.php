@@ -1,6 +1,6 @@
 <x-masterDash title="Dashboard">
     <div class="cardbox">
-        <div class="card">
+        <div class="card d-flex flex-row h-100 ">
             <div>
                 <div class="numbers">88</div>
                 <div class="cardName">Patients  d'Aujourd'hui </div>
@@ -11,7 +11,7 @@
         </div>
 
     
-        <div class="card">
+        <div class="card d-flex flex-row h-100 ">
             <div>
                 <div class="numbers">15</div>
                 <div class="cardName">Payé Aujourd'hui</div>
@@ -23,7 +23,7 @@
 
 
     
-        <div class="card">
+        <div class="card d-flex flex-row h-100 ">
             <div>
                 <div class="numbers">504</div>
                 <div class="cardName">Total du mois</div>
@@ -34,7 +34,7 @@
         </div>
 
     
-        <div class="card">
+        <div class="card d-flex flex-row h-100 ">
             <div>
                 <div class="numbers">900 DH </div>
                 <div class="cardName">revenus</div>

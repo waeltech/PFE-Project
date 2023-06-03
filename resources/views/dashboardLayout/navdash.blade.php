@@ -38,7 +38,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="{{ route('Paiementpage') }}">
                     <span class="icon">
                         <ion-icon name="cash-outline"></ion-icon>
                     </span>

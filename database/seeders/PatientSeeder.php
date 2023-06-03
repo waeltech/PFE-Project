@@ -18,7 +18,7 @@ class PatientSeeder extends Seeder
     public function run(): void
     {
         // Patients::factory(5)->create();
-        Patients::factory(5)->create()->each(function ($patient) {
+        Patients::factory(20)->create()->each(function ($patient) {
             $traitements = Traitement::inRandomOrder()->take(rand(1, 3))->pluck('Num_Traitement');
             $patient->traitements()->attach($traitements);
     });

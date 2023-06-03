@@ -20,6 +20,8 @@ class TraitementController extends Controller
     }
 
 
+
+
     public function Ajouter()
     {
         return view('Traitements.Ajouter');
@@ -33,28 +35,48 @@ class TraitementController extends Controller
             ->with('success', 'Patient a été bien supprimé ');
     }
 
-    public function modifier(Patients $patient)
+    public function modifier(Patients $patient,Traitement $traitement)
     {
-        return view('Patients.Modifier', compact('patient'));
+        return view('Traitements.modifier', compact('patient','traitement'));
     }
+
+    // public function update(PatientRequest $request, Traitement $traitement)
+    // {
+    //     $formFields = $request->validated();
+
+    //     //  Stocker les fichiers dans la base de donnée
+    //     $traitement->fill($formFields)->save();
+    //     return to_route('traitements.modifier', $traitement->Num_Traitement)->with('success', 'Le Patient a été bien modifié ');
+    // }
 
     public function update(PatientRequest $request, Traitement $traitement)
-    {
-        $formFields = $request->validated();
+{
+    $formFields = $request->validated();
 
-        //  Stocker les fichiers dans la base de donnée
-        $traitement->fill($formFields)->save();
-        return to_route('traitements.modifier', $traitement->Num_Traitement)->with('success', 'Le Patient a été bien modifié ');
-    }
+    // Store the updated data in the database
+    $traitement->update($formFields);
 
-    public function store(PatientRequest $request)
+    
+
+    return redirect()
+        ->route('traitements.modifier', $traitement->Num_Traitement)
+        ->with('success', 'Le Patient a été bien modifié ');
+}
+
+
+    
+
+
+
+    public function store(PatientRequest $request,Traitement $traitement)
     {
         // Validation des données par PatientRequest :
         $formFields = $request->validated();
-
+        dd($formFields);
         // Insertion des données dans la table patients :
 
         Traitement::create($formFields);
+
 
         return redirect()
             ->route('traitementpage')

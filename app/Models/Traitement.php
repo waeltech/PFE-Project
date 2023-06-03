@@ -12,6 +12,8 @@ class Traitement extends Model
 
     protected $primaryKey = 'Num_Traitement';
 
+    protected $fillable = ['DateTraitement', 'Acte', 'Dent', 'NumDoss'];
+
 
     
 

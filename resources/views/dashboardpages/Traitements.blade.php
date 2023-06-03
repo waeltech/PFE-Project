@@ -25,7 +25,7 @@
                 <td class="text-center">
                     {{-- Les actions d'insertion,modification et suppression  --}}
                     <a class="btn btn-primary btn-sm action-btn" href="{{ route('traitements.Ajouter') }}"
-                        role="button">Ajouter</a>
+                        role="button" >Ajouter</a>
                     <form action="{{ route('traitements.modifier', $traitement->patients->first()->NumDoss) }}" method="GET"
                         style="display:inline">
                         @csrf
@@ -47,5 +47,4 @@
 
     {{ $traitements->links() }}
     
-
 </x-masterDash>
