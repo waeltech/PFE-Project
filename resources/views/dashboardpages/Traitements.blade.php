@@ -31,7 +31,7 @@
                         @csrf
                         <button type="submit" class="btn btn-secondary btn-sm action-btn">Modifier</button>
                     </form>
-                    <form action="{{ route('patients.supprimer', $traitement->patients->first()->NumDoss) }}" method="POST"
+                    <form action="{{ route('traitements.supprimer', $traitement->patients->first()->NumDoss) }}" method="POST"
                         style="display:inline">
                         @method('DELETE')
                         @csrf

@@ -31,7 +31,7 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Acte</label>
+            <label class="form-label">Acte</label><br>
             <select name="Acte" id="Acte">
                 <option value="Traitement endodontique" {{ old('Acte', $traitement->Acte) == 'Traitement endodontique' ? 'selected' : '' }}>Traitement endodontique</option>
                 <option value="Obturation composite"{{ old('Acte', $traitement->Acte) == 'Obturation composite' ? 'selected' : '' }}>Obturation composite</option>

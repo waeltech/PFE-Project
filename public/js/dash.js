@@ -24,8 +24,9 @@ let button = document.querySelector(".dark-toggle");
 button.onclick = function() {
   document.body.classList.toggle("dark");
   if (document.body.classList.contains("dark")) {
-    button.src = "{{ asset('images/sun.png') }}";
+    button.src = button.dataset.sun;
   } else {
-    button.src = "{{ asset('images/moon.png') }}";
+    button.src = button.dataset.moon;
   }
 };
+

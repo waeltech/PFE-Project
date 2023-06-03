@@ -69,6 +69,9 @@ Route::get('/traitement',[TraitementController::class,'Traitindex'])->name('trai
 Route::get('/traitements/Ajouter',[TraitementController::class,'Ajouter'])->name('traitements.Ajouter');
 Route::post('/traitements/store',[TraitementController::class,'store'])->name('traitements.store');
 
+Route::delete('/traitements/{traitement}',[TraitementController::class,'supprimer'])
+->name('traitements.supprimer');
+
 Route::get('/traitements/{traitement}/modifier',[TraitementController::class,'modifier'])
 ->name('traitements.modifier');
 

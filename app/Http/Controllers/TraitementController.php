@@ -3,24 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PatientRequest;
+use App\Http\Requests\TraitementRequest;
 use App\Models\Patients;
 use App\Models\Traitement;
 use Illuminate\Http\Request;
 
 class TraitementController extends Controller
 {
-    
     public function Traitindex()
     {
         $traitements = Traitement::with('patients')->paginate(10);
         $patients = Patients::paginate(10);
 
-        return view('dashboardpages.Traitements', compact('traitements','patients'));
-
+        return view('dashboardpages.Traitements', compact('traitements', 'patients'));
     }
-
-
-
 
     public function Ajouter()
     {
@@ -35,9 +31,9 @@ class TraitementController extends Controller
             ->with('success', 'Patient a été bien supprimé ');
     }
 
-    public function modifier(Patients $patient,Traitement $traitement)
+    public function modifier(Patients $patient, Traitement $traitement)
     {
-        return view('Traitements.modifier', compact('patient','traitement'));
+        return view('Traitements.modifier', compact('patient', 'traitement'));
     }
 
     // public function update(PatientRequest $request, Traitement $traitement)
@@ -50,37 +46,28 @@ class TraitementController extends Controller
     // }
 
     public function update(PatientRequest $request, Traitement $traitement)
-{
-    $formFields = $request->validated();
+    {
+        $formFields = $request->validated();
 
-    // Store the updated data in the database
-    $traitement->update($formFields);
+        // Store the updated data in the database
+        $traitement->update($formFields);
 
-    
+        return redirect()
+            ->route('traitements.modifier', $traitement->Num_Traitement)
+            ->with('success', 'Le Patient a été bien modifié ');
+    }
 
-    return redirect()
-        ->route('traitements.modifier', $traitement->Num_Traitement)
-        ->with('success', 'Le Patient a été bien modifié ');
-}
-
-
-    
-
-
-
-    public function store(PatientRequest $request,Traitement $traitement)
+    public function store(TraitementRequest $request)
     {
         // Validation des données par PatientRequest :
         $formFields = $request->validated();
-        dd($formFields);
+
         // Insertion des données dans la table patients :
 
         Traitement::create($formFields);
 
-
         return redirect()
-            ->route('traitementpage')
+            ->route('patientspage')
             ->with('success', 'Patient ajouté avec succès.');
     }
-
 }
