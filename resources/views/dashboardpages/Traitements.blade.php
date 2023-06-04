@@ -1,7 +1,12 @@
 <x-masterDash title="Traitements">
 
 
-    <div class="text-center py-2 mt-2"> La liste des patients </div>
+    <div class="table-ajouter-title py-2 mt-2"> 
+        <h2>  La liste des Traitements </h2>
+        <a class="btn btn-primary btn-lg action-btn" href="{{ route('traitements.Ajouter') }}"role="button" >
+        Ajouter
+        </a>
+    </div>
 
     <table class="table table-bordered ">
         <tr>
@@ -24,8 +29,6 @@
                 <td>{{ $traitement->Dent }}</td>
                 <td class="text-center">
                     {{-- Les actions d'insertion,modification et suppression  --}}
-                    <a class="btn btn-primary btn-sm action-btn" href="{{ route('traitements.Ajouter') }}"
-                        role="button" >Ajouter</a>
                     <form action="{{ route('traitements.modifier', $traitement->patients->first()->NumDoss) }}" method="GET"
                         style="display:inline">
                         @csrf

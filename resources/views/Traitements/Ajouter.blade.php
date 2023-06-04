@@ -1,12 +1,11 @@
-<x-masterDash title="Ajouter un traitement">
-    <h1>Ajouter un traitement</h1>
-    
-    <form method="POST" action="{{ route('traitements.store') }}">
+<x-masterDash title="Ajouter un traitement">    
+    <form class="form-inputss" method="POST" action="{{ route('traitements.store') }}">
         @csrf
-
+        <div class="prenom-box p-3">
+            <h2> Ajouter un Traitement : </h2>
         <div class="mb-3">
             <label class="form-label">Numéro de dossier</label>
-            <input type="number" name="NumDoss" class="form-control" value="{{ old('NumDoss') }}">
+            <input type="number" name="NumDoss" class="form-control" placeholder="Numéro de dossier" value="{{ old('NumDoss') }}">
         </div>
 
         <div class="mb-3">
@@ -16,7 +15,7 @@
 
         <div class="mb-3">
             <label class="form-label">Acte</label><br>
-            <select name="Acte" id="Acte">
+            <select class="form-control select-input" name="Acte" id="Acte">
                 <option value="Traitement endodontique">Traitement endodontique</option>
                 <option value="Obturation composite">Obturation composite</option>
                 <option value="Détartrage">Détartrage</option>
@@ -39,12 +38,13 @@
 
         <div class="mb-3">
             <label class="form-label">Dent</label>
-            <input type="number" name="Dent" class="form-control" value="{{ old('Dent') }}">
+            <input type="number" name="Dent" class="form-control" placeholder="Dent" value="{{ old('Dent') }}">
         </div>
 
         <div class="my-4">
             <button type="submit" class="btn  profile-button">Ajouter</button>
             <a href="{{ route('traitementpage') }}" class="btn btn-default">Retour</a>
+        </div>
         </div>
     </form>
 </x-masterDash>

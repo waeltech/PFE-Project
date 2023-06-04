@@ -10,21 +10,21 @@
         </x-alert>
     @endif
 
-    <h1> Ajouter Patient : </h1>
-    <form method="POST" action="{{ route('patients.store') }}">
+    <form class="form-inputss" method="POST" action="{{ route('patients.store') }}">
         @csrf
-        <div class="p-3 py-5">
+        <div class="prenom-box p-3">
+                <h2> Ajouter Patient : </h2>
             <div class="row mt-2 ">
                 <div class="col-md-6">
                     <label class="form-label labels">Prenom</label>
-                    <input type="text" name="PrenomPat" class="form-control" value="{{ old('PrenomPat') }}">
+                    <input type="text" placeholder="Prenom" name="PrenomPat" class="form-control" value="{{ old('PrenomPat') }}">
                     @error('PrenomPat')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="col-md-6">
                     <label class="form-label labels">nom</label>
-                    <input type="text" name="NomPat" class="form-control" value="{{ old('NomPat') }}">
+                    <input type="text" name="NomPat" placeholder="nom" class="form-control" value="{{ old('NomPat') }}">
                     @error('NomPat')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -33,8 +33,8 @@
 
 
 
-            <div class="row mt-3">
-                <div>
+            <div class="ajouter-inputs-box row mt-3">
+                <div class="">
                     <label class="form-label">Sexe :</label>
                     <select id="sexe" name="Sexe" class="form-control">
                         <option value="M">M</option>
@@ -47,39 +47,39 @@
 
                 <div>
                     <label class="form-label">Né le :</label>
-                    <input type="date" class="form-control" name="DateNaiss" id="dateNaiss"><br>
+                    <input type="date" class="form-control" name="DateNaiss" id="dateNaiss" placeholder="Né le :"><br>
                 </div>
 
 
                 <div>
-                    <label class="form-label">à :</label>
-                    <input type="text" class="form-control" name="LieuNaiss"><br>
+                    <label id="à" class="form-label">à :</label>
+                    <input type="text" class="form-control" name="LieuNaiss" placeholder="à :"><br>
                 </div>
 
 
 
                 <div>
                     <label class="form-label">Age:</label>
-                    <input type="text" class="form-control" name="Age" id="age"><br>
+                    <input type="text" class="form-control" name="Age" id="age" placeholder="Age:"><br>
                 </div>
 
 
                 <div>
                     <label class="form-label">Etat Civil :</label>
-                    <input type="text" class="form-control" name="Etat_civil"><br>
+                    <input type="text" class="form-control" name="Etat_civil" placeholder="Etat Civil :"><br>
                 </div>
 
 
 
                 <div>
                     <label class="form-label">Addresse :</label>
-                    <input type="text" class="form-control" name="AddressePat"><br>
+                    <input type="text" class="form-control" name="AddressePat"  placeholder="Addresse :"><br>
                 </div>
 
 
-                <div>
+                <div class="select-label">
                     <label class="form-label">Mutuelle :</label>
-                    <select class="form-control" name="Mutuelle">
+                    <select class="form-control select-input" name="Mutuelle">
                         <option value="YES">YES</option>
                         <option value="NO">NO</option>
                     </select><br>
@@ -87,21 +87,21 @@
 
                 <div>
                     <label class="form-label">Profession:</label>
-                    <input type="text" class="form-control" name="Profession"><br>
+                    <input type="text" class="form-control" name="Profession" placeholder="Profession:"><br>
                 </div>
 
 
 
                 <div>
                     <label class="form-label">Email:</label>
-                    <input type="email" class="form-control" name="Email"><br>
+                    <input type="email" class="form-control" name="Email" placeholder="Email"><br>
                 </div>
 
 
 
-                <div>
+                <div class="tel">
+                    <input type="tel" class="form-control" name="Tel" placeholder="Tel: ">
                     <label class="form-label">Tel:</label>
-                    <input type="tel" class="form-control" name="Tel"><br>
                 </div>
 
                 <div>

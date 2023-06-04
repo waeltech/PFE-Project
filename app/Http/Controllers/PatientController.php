@@ -20,6 +20,7 @@ class PatientController extends Controller
         return view('home');        
     }
 
+    
 
     public function patients()
     {
