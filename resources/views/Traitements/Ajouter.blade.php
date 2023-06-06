@@ -48,7 +48,7 @@
         <div class="mb-3">
             <label class="form-label">Dent</label>
             <input type="number" name="Dent" class="form-control" placeholder="Dent">
-           <div class="container">
+           <div class="grid-container">
             <div class="tooth-chart">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                      viewBox="0 0 450 700" enable-background="new 0 0 450 700" xml:space="preserve">

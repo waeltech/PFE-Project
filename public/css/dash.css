@@ -725,10 +725,9 @@ form label {
 /* ************ Dental chart   *************** */
 
 .tooth-chart {
-  width: 450px;
-  display: inline-block;
+  /* display: inline-block; */
   width: 50%; /* Adjust the width as needed */
-  box-sizing: border-box; /* Include padding and border in width calculation */
+  /* box-sizing: border-box; Include padding and border in width calculation */
 }
 
 #Spots polygon,
@@ -758,8 +757,9 @@ form label {
 }
 
 
-.container {
-  white-space: nowrap; /* Prevent line breaks */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 
