@@ -16,12 +16,12 @@ return new class extends Migration
         $table->unsignedBigInteger('Num_Traitement');
         $table->timestamps();
 
-        // Check if the 'patients' table exists before adding the foreign key
-        if (Schema::hasTable('patients')) {
-            $table->foreign('NumDoss')->references('NumDoss')->on('patients')->onDelete('cascade');
-        }
+        // // Check if the 'patients' table exists before adding the foreign key
+        // if (Schema::hasTable('patients')) {
+        //     $table->foreign('NumDoss')->references('NumDoss')->on('patients')->onDelete('cascade');
+        // }
 
-        $table->foreign('Num_Traitement')->references('Num_Traitement')->on('traitements')->onDelete('cascade');
+        // $table->foreign('Num_Traitement')->references('Num_Traitement')->on('traitements')->onDelete('cascade');
     });
 }
 

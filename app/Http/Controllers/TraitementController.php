@@ -12,7 +12,9 @@ class TraitementController extends Controller
 {
     public function Traitindex()
     {
-        $traitements = Traitement::with('patients')->paginate(10);
+        $traitements = Traitement::with('patients')
+            ->whereHas('patients')
+            ->paginate(10);
         $patients = Patients::paginate(10);
 
         return view('dashboardpages.Traitements', compact('traitements', 'patients'));
@@ -54,7 +56,7 @@ class TraitementController extends Controller
 
         return redirect()
             ->route('traitements.modifier', $traitement->Num_Traitement)
-            ->with('success', 'Le Patient a été bien modifié ');
+            ->with('success', 'Le traitement a été bien modifié ');
     }
 
     public function store(TraitementRequest $request)
@@ -62,12 +64,15 @@ class TraitementController extends Controller
         // Validation des données par PatientRequest :
         $formFields = $request->validated();
 
+
         // Insertion des données dans la table patients :
 
         Traitement::create($formFields);
 
         return redirect()
-            ->route('patientspage')
-            ->with('success', 'Patient ajouté avec succès.');
+            ->route('traitementpage')
+            ->with('success', ' Le traitement ajouté avec succès.');
     }
+
+    
 }
