@@ -105,7 +105,7 @@
 
                 <div>
                     <label class="form-label">Observations :</label>
-                    <textarea name="Observations" class="form-control" value="{{ old('Observations', $patient->Observations) }}"></textarea>
+                    <textarea name="Observations" class="form-control">{{ old('Observations', $patient->Observations) }}</textarea>
                 </div>
 
             </div>
@@ -113,7 +113,7 @@
 
 
             <div class="my-4">
-                <button type="submit" class="btn  profile-button">Ajouter</button>
+                <button type="submit" class="btn  profile-button">Modifier</button>
                 <a href="{{ route('patientspage') }}" class="btn btn-default">Retour</a>
             </div>
         </div>

@@ -52,7 +52,7 @@ Route::delete('/patients/{patient}',[PatientController::class,'supprimer'])
 Route::get('/patients/{patient}/modifier',[PatientController::class,'modifier'])
 ->name('patients.modifier');
 
-Route::put('/patients/{patient}',[PatientController::class,'update'])
+Route::post('/patients/{patient}',[PatientController::class,'update'])
 ->name('patients.update');
 
 Route::get('/patients/Ajouter',[PatientController::class,'Ajouter'])->name('patients.Ajouter');
@@ -69,13 +69,14 @@ Route::get('/traitement',[TraitementController::class,'Traitindex'])->name('trai
 Route::get('/traitements/Ajouter',[TraitementController::class,'Ajouter'])->name('traitements.Ajouter');
 Route::post('/traitements/store',[TraitementController::class,'store'])->name('traitements.store');
 
-Route::delete('/traitements/{traitement}',[TraitementController::class,'supprimer'])
+Route::delete('traitement/{traitement}', [TraitementController::class, 'supprimer'])
 ->name('traitements.supprimer');
+
 
 Route::get('/traitements/{traitement}/modifier',[TraitementController::class,'modifier'])
 ->name('traitements.modifier');
 
-Route::put('/traitements/{traitements}',[TraitementController::class,'update'])
+Route::post('/traitements/{traitement}',[TraitementController::class,'update'])
 ->name('traitements.update');
 
 
