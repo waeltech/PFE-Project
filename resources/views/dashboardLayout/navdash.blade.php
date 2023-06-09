@@ -15,7 +15,7 @@
                 <span class="hover-text">SMILE</span>
             </div> --}}
 
-            <div class="effect"> 
+            <div class="effect" width="300"> 
                 <p>ORALSPACE</p>
             </div>
 

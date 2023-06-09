@@ -21,7 +21,7 @@
 
         @foreach ($traitements as $traitement)
             <tr>
-                <td>{{ $traitement->patients->first()->NumDoss }}</td>
+                <td>{{ $traitement->NumDoss }}</td>
                 <td>{{ $traitement->Num_Traitement }}</td>
                 <td>{{ $traitement->patients->first()->PrenomPat }}</td>
                 <td>{{ $traitement->patients->first()->NomPat }}</td>

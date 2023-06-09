@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PatientRequest;
 use App\Http\Requests\TraitementRequest;
 use App\Models\Patients;
+use App\Models\PatientTraitement;
 use App\Models\Traitement;
 use Illuminate\Http\Request;
 
@@ -39,19 +40,6 @@ class TraitementController extends Controller
         return view('Traitements.modifier', compact('patient', 'traitement'));
     }
 
-    // public function update(PatientRequest $request, Traitement $traitement)
-    // {
-    //     $formFields = $request->validated();
-
-    //     // Store the updated data in the database
-    //     $traitement->update($formFields);
-
-    //     return redirect()
-    //         ->route('traitementpage', $traitement->Num_Traitement)
-    //         ->with('success', 'Le traitement a été bien modifié ');
-    // }
-
-
     public function update(TraitementRequest $request,Traitement $traitement)
 {
     $formFields = $request->validated();
@@ -68,10 +56,18 @@ class TraitementController extends Controller
         $formFields = $request->validated();
 
         // Insertion des données dans la table patients :
-        Traitement::create($formFields);
-
-        return redirect()
-            ->route('traitementpage')
-            ->with('success', ' Le traitement ajouté avec succès.');
+        $id = Traitement::insertGetId($formFields);
+        $pt = new PatientTraitement();
+        $pt->NumDoss = $request->input('NumDoss');
+        $pt->Num_Traitement = $id;
+        if ($pt->save()) {
+            return redirect()
+                ->route('traitementpage')
+                ->with('success', ' Le traitement ajouté avec succès.');
+        } else {
+            return redirect()
+                ->route('traitementpage')
+                ->with('error', 'error');
+        }
     }
 }

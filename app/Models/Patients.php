@@ -15,7 +15,7 @@ class Patients extends Model
 
     public function traitements(): BelongsToMany
     {
-        return $this->belongsToMany(Traitement::class, 'patient_traitement', 'NumDoss', 'Num_Traitement')
+        return $this->belongsToMany(Traitement::class, 'patient_traitements', 'NumDoss', 'Num_Traitement')
             ->withPivot('NumDoss', 'Num_Traitement');
     }
 }

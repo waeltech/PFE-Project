@@ -40,6 +40,8 @@ Route::get('/hello',[HomeController::class,'hello']);
 
 
 // *****************************************************************************
+Route::post('/patients/store',[PatientController::class,'store'])->name('patients.store');
+
 
 Route::get('/patients',[PatientController::class,'patients'])->name('patientspage');
 Route::get('/patients/{patient}',[PatientController::class,'Afficher'])
@@ -56,7 +58,6 @@ Route::post('/patients/{patient}',[PatientController::class,'update'])
 ->name('patients.update');
 
 Route::get('/patients/Ajouter',[PatientController::class,'Ajouter'])->name('patients.Ajouter');
-Route::post('/patients/store',[PatientController::class,'store'])->name('patients.store');
 
 
 // Route::resource('patients',PatientController::class);

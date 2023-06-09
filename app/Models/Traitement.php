@@ -12,12 +12,11 @@ class Traitement extends Model
 
     protected $primaryKey = 'Num_Traitement';
 
-    protected $fillable = ['DateTraitement', 'Acte', 'Dent', 'NumDoss'];
+    protected $fillable = [ 'NumDoss','DateTraitement', 'Acte', 'Dent'];
 
     public function patients(): BelongsToMany
     {
-        return $this->belongsToMany(Patients::class, 'patient_traitement', 'Num_Traitement', 'NumDoss')
-            ->withPivot('NumDoss', 'Num_Traitement');
+        return $this->belongsToMany(Patients::class, 'patient_traitements', 'Num_Traitement', 'NumDoss');
     }
 
 
