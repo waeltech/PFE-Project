@@ -102,7 +102,7 @@ Route::get('/settings',[SettingsController::class,'settings'])->name('settingspa
 
 // **********************    Dashboard Routes   ********************************
 
-Route::get('/dash',[DashboardController::class,'dashboard'])->name('dashboardpage')->middleware('auth');
+Route::get('/dash',[DashboardController::class,'dashboard'])->name('dashboardpage')->middleware('auth.session');
 
 
 // *****************************************************
