@@ -86,9 +86,9 @@ Route::post('/traitements/{traitement}',[TraitementController::class,'update'])
 
 // ============== LOGIN ROUTE ================== ***
 
-Route::get('/login',[LoginController::class,'loginaffich'])->name('login.affich')->middleware('guest');
-Route::post('/login',[LoginController::class,'login'])->name('login')->middleware('guest');
-Route::get('/logout',[LoginController::class,'logout'])->name('login.logout')->middleware('auth');
+Route::get('/login',[LoginController::class,'loginaffich'])->name('login.affich');
+Route::post('/process-login',[LoginController::class,'processLogin'])->name('processLogin');
+Route::get('/logout',[LoginController::class,'logout'])->name('login.logout');
 
 
 
@@ -102,7 +102,7 @@ Route::get('/settings',[SettingsController::class,'settings'])->name('settingspa
 
 // **********************    Dashboard Routes   ********************************
 
-Route::get('/dash',[DashboardController::class,'dashboard'])->name('dashboardpage');
+Route::get('/dash',[DashboardController::class,'dashboard'])->name('dashboardpage')->middleware('auth');
 
 
 // *****************************************************

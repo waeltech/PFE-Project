@@ -38,9 +38,14 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'dentistes',
+        ],
+        'dentiste' => [
+            'driver' => 'session',
+            'provider' => 'dentistes',
         ],
     ],
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -60,16 +65,12 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'dentistes' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Dentiste::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -91,8 +92,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'dentistes' => [
+            'provider' => 'dentistes',
             'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,

@@ -3,6 +3,7 @@
         <div class="patient">
             <div class="patient-card">
                 <img src="{{ asset('images/avatar01.jpg') }}" class="patient-img">
+                <div class="vertical-line"></div>
                 <div class="info">
                     <h1> {{ $patient->PrenomPat }} {{ $patient->NomPat }}</h1>
                     <hr>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Animated Login Form</title>
+	<title>Login Page</title>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/login.css') }}">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
@@ -14,7 +14,8 @@
 			<img src="{{ asset('images/bg.svg') }}">
 		</div>
 		<div class="login-content">
-			<form action="index.html">
+			<form action="{{ route('processLogin') }}" method="POST">
+				@csrf
 				<img src="{{ asset('images/avatar.png') }}">
 				<h2 class="title">Welcome</h2>
            		<div class="input-div one">
@@ -23,7 +24,7 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Email</h5>
-           		   		<input type="email" class="input">
+           		   		<input type="email" class="input" name="EmailDent" value="{{ old('EmailDent') }}" required>
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -32,7 +33,7 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Mot de Passe</h5>
-           		    	<input type="password" class="input">
+           		    	<input type="password" name="password" class="input" required>
             	   </div>
             	</div>
             	<a href="#">Mot de Passe oublié ?</a>
