@@ -44,8 +44,16 @@ return [
             'driver' => 'session',
             'provider' => 'dentistes',
         ],
+        'Administrateur' => [
+            'driver' => 'session',
+            'provider' => 'Administrateur',
+        ],
+        'Assistante' => [
+            'driver' => 'session',
+            'provider' => 'Assistante',
+        ],
     ],
-    
+
 
     /*
     |--------------------------------------------------------------------------
@@ -69,8 +77,16 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Dentiste::class,
         ],
+        'Administrateur' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Administrateur::class,
+        ],
+        'Assistante' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Assistante::class,
+        ],
     ],
-    
+
 
     /*
     |--------------------------------------------------------------------------

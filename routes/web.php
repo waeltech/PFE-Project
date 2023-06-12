@@ -86,7 +86,10 @@ Route::post('/traitements/{traitement}',[TraitementController::class,'update'])
 
 // ============== LOGIN ROUTE ================== ***
 
-Route::get('/login',[LoginController::class,'loginaffich'])->name('login.affich');
+Route::get('admin/login',[LoginController::class,'loginaffich'])->name('login.admin');
+Route::get('assistant/login',[LoginController::class,'loginaffich'])->name('login.assistant');
+Route::get('dentist/login',[LoginController::class,'loginaffich'])->name('login.dentist');
+
 Route::post('/process-login',[LoginController::class,'processLogin'])->name('processLogin');
 Route::get('/logout',[LoginController::class,'logout'])->name('login.logout');
 

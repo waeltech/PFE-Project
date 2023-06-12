@@ -3,14 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Dentiste extends Model implements Authenticatable
+class Dentiste extends Authenticatable
 {
-    use AuthenticatableTrait;
-
     use HasFactory;
 
     protected $table = "dentiste";

@@ -11,15 +11,14 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('dentiste', function (Blueprint $table) {
-            $table->bigIncrements('idDent');
-            $table->string('NomDent');
-            $table->string('PrenomDent');
-            $table->string('TelDent');
-            $table->string('EmailDent')->unique();
+            $table->id();
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('tel');
+            $table->string('email')->unique();
             $table->string('password');
-            $table->string('Ville');
-            $table->string('Adresse');
-            $table->unsignedInteger('role')->default('dentiste');
+            $table->string('ville');
+            $table->string('adresse');
             $table->timestamps();
         });
     }

@@ -3,9 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Administrateur extends Model
+
+class Administrateur extends Authenticatable
 {
     use HasFactory;
+
+    protected $guard = 'admin';
+    protected $fillable = [
+        'nom', 'prenom' , 'email', 'password',
+    ];
+    protected $hidden = [
+      'password', 'remember_token',
+    ];
 }

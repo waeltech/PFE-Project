@@ -12,14 +12,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('assistantes', function (Blueprint $table) {
-            $table->string('idAssist')->primary();
-            $table->string('NomAssist');
-            $table->string('PrenomAssist');
-            $table->string('TelAssist');
-            $table->string('EmailAssist')->unique();
-            $table->string('Password');
-            $table->string('Ville');
-            $table->unsignedInteger('role')->default('assistantes');
+            $table->id();
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('tel');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('ville');
             $table->timestamps();
         });
     }

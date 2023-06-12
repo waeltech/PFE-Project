@@ -15,24 +15,49 @@ class LoginController extends Controller
 
     public function processLogin(Request $request)
     {
-       
+
         $credentials = $request->validate([
-            'EmailDent' => ['required', 'email'],
+            'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        
-        if (Auth::guard('dentiste')->attempt($credentials)) {
-            
-            $request->session()->regenerate();
-            
-            return redirect()->to('dash');
+
+        if($request->guard === 'admin')
+        {
+            if (Auth::guard('Administrateur')->attempt($credentials)) {
+
+                $request->session()->regenerate();
+
+                return redirect()->to('dash');
+            }
         }
-        
+
+        if($request->guard === 'assistant')
+        {
+            if (Auth::guard('Assistante')->attempt($credentials)) {
+
+                $request->session()->regenerate();
+
+                return redirect()->to('dash');
+            }
+        }
+
+        if($request->guard === 'dentist')
+        {
+            if (Auth::guard('dentiste')->attempt($credentials)) {
+
+                $request->session()->regenerate();
+
+                return redirect()->to('dash');
+            }
+        }
+
+
+
         return back()
             ->withErrors([
-                'EmailDent' => 'Email ou le mot de passe fourni est incorrect',
+                'email' => 'Email ou le mot de passe fourni est incorrect',
             ])
-            ->onlyInput('EmailDent');
+            ->onlyInput('email');
     }
 
     public function logout()
@@ -40,7 +65,7 @@ class LoginController extends Controller
         Session::flush();
 
         Auth::guard('dentiste')->logout();
-
-        return to_route('login.affich');
+        return redirect()->to('/');
+        //return to_route('admin/login');
     }
 }

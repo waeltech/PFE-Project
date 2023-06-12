@@ -36,6 +36,6 @@ class PatientRequest extends FormRequest
             'Tel' => 'required|string|max:255',
             'Observations' => 'required|string|max:255',
         ];
-        
+
     }
 }

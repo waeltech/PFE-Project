@@ -17,11 +17,12 @@ class DatabaseSeeder extends Seeder
             PatientSeeder::class,
             TraitementSeeder::class,
             DentisteSeeder::class,
+            AdministrateurSeeder::class,
         ]
-	
+
         );
 
-        
+
         \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([

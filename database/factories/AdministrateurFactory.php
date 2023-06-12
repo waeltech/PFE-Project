@@ -17,7 +17,11 @@ class AdministrateurFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nom' => $this->faker->lastName(),
+            'prenom' => $this->faker->firstName(),
+            'tel' => $this->faker->phoneNumber(),
+            'email' => $this->faker->unique()->safeEmail,
+            'password' => bcrypt('password'),
         ];
     }
 }

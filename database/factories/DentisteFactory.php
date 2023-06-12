@@ -17,13 +17,13 @@ class DentisteFactory extends Factory
     public function definition(): array
     {
         return [
-            'NomDent' => $this->faker->lastName(),
-            'PrenomDent' => $this->faker->firstName(),
-            'TelDent' => $this->faker->phoneNumber(),
-            'EmailDent' => $this->faker->unique()->safeEmail,
-            'Password' => bcrypt('password'),
-            'Ville' => $this->faker->city(),
-            'Adresse' => $this->faker->address(),
+            'nom' => $this->faker->lastName(),
+            'prenom' => $this->faker->firstName(),
+            'tel' => $this->faker->phoneNumber(),
+            'email' => $this->faker->unique()->safeEmail,
+            'password' => bcrypt('password'),
+            'ville' => $this->faker->city(),
+            'adresse' => $this->faker->address(),
         ];
     }
 }

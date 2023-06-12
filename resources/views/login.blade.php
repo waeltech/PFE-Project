@@ -24,17 +24,20 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Email</h5>
-           		   		<input type="email" class="input" name="EmailDent" value="{{ old('EmailDent') }}" required>
+           		   		<input type="email" class="input" name="email" value="{{ old('email') }}" required>
            		   </div>
            		</div>
            		<div class="input-div pass">
-           		   <div class="i"> 
+           		   <div class="i">
            		    	<i class="fas fa-lock"></i>
            		   </div>
            		   <div class="div">
            		    	<h5>Mot de Passe</h5>
            		    	<input type="password" name="password" class="input" required>
             	   </div>
+                   <div class="div">
+                        <input type="guard" name="guard" class="input" value="{{Request::segment(1)}}" hidden >
+                </div>
             	</div>
             	<a href="#">Mot de Passe oublié ?</a>
             	<input type="submit" class="btn" value="Se connecter">

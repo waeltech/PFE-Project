@@ -19,7 +19,13 @@
             <a class="nav-link " href="{{route('dashboardpage')}}">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="{{route('login.affich')}}">Login</a>
+            <a class="nav-link " href="{{route('login.admin')}}">Admin Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{route('login.dentist')}}">Dentist Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{route('login.assistant')}}">Assistant Login</a>
           </li>
         </ul>
       </div>
